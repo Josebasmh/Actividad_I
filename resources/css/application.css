@@ -19,7 +19,26 @@
 }
 .table-row-cell:odd{
 	-fx-background-color: F6E4F4;
+	-fx-text-fill: BLACK;
 }
 .table-row-cell:even{
 	-fx-background-color: WHITE;
+	-fx-text-fill: BLACK;
 }
+.table-row-cell:hover{
+	-fx-background-color: D06FAB;
+	-fx-text-fill: BLACK;
+}
+.table-row-cell:selected{
+	-fx-background-color: AF287C;
+	-fx-text-fill: BLACK;
+}
+.context-menu{
+	-fx-background-color: WHITE;
+	-fx-text-fill: BLACK;
+}
+.menu-item .label{
+	-fx-background-color: AF287C;
+	-fx-text-fill: BLACK;
+}
+

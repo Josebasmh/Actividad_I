@@ -6,13 +6,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
-		stage.setTitle("PERSONA"); 
+		stage.setTitle("PERSONA");
+		
+		//Image imgLogo = new Image();
 		FlowPane root;
 		try {
 			root = (FlowPane)FXMLLoader.load(getClass().getResource("/fxml/Persona.fxml"));
