@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import dao.PersonaDao;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Modality;
@@ -35,6 +35,9 @@ public class ActividadBController implements Initializable{
 
     @FXML
     private Button btnModificar;
+    
+    @FXML
+    private ImageView imgImagen;
 	
 	@FXML
     private TableView<Persona> tblTabla;
@@ -66,8 +69,7 @@ public class ActividadBController implements Initializable{
 		listaFiltrada = pDao.cargarPersonas();
 		tblNombre.setCellValueFactory(new PropertyValueFactory<Persona, String>("nombre"));
 		tblApellidos.setCellValueFactory(new PropertyValueFactory<Persona, String>("apellidos"));
-		tblEdad.setCellValueFactory(new PropertyValueFactory<Persona, Integer>("edad"));		
-			
+		tblEdad.setCellValueFactory(new PropertyValueFactory<Persona, Integer>("edad"));
 		
 		tblTabla.setItems(listaFiltrada);		
 	}

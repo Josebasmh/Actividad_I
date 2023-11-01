@@ -16,7 +16,7 @@ public class Main extends Application {
 		FlowPane root;
 		try {
 			root = (FlowPane)FXMLLoader.load(getClass().getResource("/fxml/Persona.fxml"));
-			Scene scene = new Scene(root,820,620); 
+			Scene scene = new Scene(root,820,620);
 			stage.setScene(scene);
 			stage.setMinHeight(620);
 			stage.setMinWidth(820);
