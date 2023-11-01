@@ -7,16 +7,23 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ActividadBController">
+<FlowPane id="fondo" alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ActividadBController">
    <children>
       <VBox alignment="CENTER" prefHeight="560.0" prefWidth="760.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="760.0" spacing="10.0">
                <children>
+                  <ImageView fx:id="imgImagen" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/contactos.jpeg" />
+                     </image>
+                  </ImageView>
                   <Label text="Filtrar por nombre: " />
                   <TextField fx:id="txtFiltrar" onKeyTyped="#filtrarTabla" />
                </children>
@@ -37,11 +44,11 @@
                   <Insets bottom="30.0" />
                </VBox.margin>
             </TableView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" stylesheets="@../css/application.css">
                <children>
-                  <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarPersona" text="Agregar Persona" />
-                  <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPersona" text="Modificar Persona" />
-                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPersona" text="Eliminar Persona" />
+                  <Button id="boton" fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarPersona" text="Agregar Persona" />
+                  <Button id="boton" fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPersona" text="Modificar Persona" />
+                  <Button id="boton" fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPersona" text="Eliminar Persona" />
                </children>
             </HBox>
          </children>

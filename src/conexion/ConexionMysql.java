@@ -12,7 +12,7 @@ public class ConexionMysql {
 	public ConexionMysql() throws SQLException {
 		String host = "localhost";
 	    String baseDatos = "deinsa";
-	    String usuario = "user";
+	    String usuario = "root";
 	    String password = "user";
 	    String cadenaConexion = "jdbc:mysql://" + host + "/" + baseDatos+ "?serverTimezone=" + TimeZone.getDefault().getID();
 	    conn = DriverManager.getConnection(cadenaConexion, usuario, password);
