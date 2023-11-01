@@ -78,14 +78,17 @@ public class ActividadBController implements Initializable{
 		
 		tblTabla.setItems(listaFiltrada);
 		ContextMenu contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(new MenuItem("Modificar"));
+		MenuItem miModificar=new MenuItem("Modificar");
+		
+		contextMenu.getItems().addAll(miModificar);
 		contextMenu.getItems().addAll(new MenuItem("Eliminar"));
 		tblTabla.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent arg0) {
 				if (arg0.getButton().equals(MouseButton.PRIMARY)) {
-					contextMenu.show(tblTabla,arg0.getScreenX(),arg0.getScreenY());		
+					contextMenu.show(tblTabla,arg0.getScreenX(),arg0.getScreenY());
+					
 				}
 			}
 		});
