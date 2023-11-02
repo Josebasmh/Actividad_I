@@ -15,16 +15,15 @@ import javafx.scene.layout.FlowPane;
 public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
-		stage.setTitle("PERSONA");
 		
 		//Image imgLogo = new Image();
 		FlowPane root;
 		try {
 			String idioma = Propiedades.getValor("idioma");
 			String region = Propiedades.getValor("region");
-			Locale.setDefault(new Locale(idioma,region));
-			ResourceBundle bundle= ResourceBundle.getBundle("idiomas/messages");
+			ResourceBundle bundle= ResourceBundle.getBundle("idiomas/messages",new Locale(idioma,region));
 			root = (FlowPane)FXMLLoader.load(getClass().getResource("/fxml/Persona.fxml"),bundle);
+			stage.setTitle(bundle.getString("title"));
 			Scene scene = new Scene(root,820,620);
 			stage.setScene(scene);
 			stage.setMinHeight(620);
