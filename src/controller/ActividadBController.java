@@ -88,7 +88,7 @@ public class ActividadBController implements Initializable{
 		
 		cmTabla = new ContextMenu();
 		miModificar = new MenuItem("Modificar");
-		//miEliminar = new MenuItem("Eliminar");
+		
 		
 		cmTabla.getItems().addAll(miModificar);
 		
