@@ -34,11 +34,11 @@
 	-fx-text-fill: BLACK;
 }
 .context-menu{
-	-fx-background-color: WHITE;
+	-fx-background-color: F6E4F4;
 	-fx-text-fill: BLACK;
 }
-.context-menu-cell{
-	-fx-background-color: WHITE;
+.menu-item:hover{
+	-fx-background-color: AF287C;
 	-fx-text-fill: BLACK;
 }
 

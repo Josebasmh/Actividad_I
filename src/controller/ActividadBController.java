@@ -41,7 +41,16 @@ public class ActividadBController implements Initializable{
     private Button btnModificar;
     
     @FXML
+    private ContextMenu cmTabla;
+    
+    @FXML
     private ImageView imgImagen;
+    
+    @FXML
+    private MenuItem miModificar;
+    
+    @FXML
+    private MenuItem miEliminar;
 	
 	@FXML
     private TableView<Persona> tblTabla;
@@ -76,18 +85,13 @@ public class ActividadBController implements Initializable{
 		tblEdad.setCellValueFactory(new PropertyValueFactory<Persona, Integer>("edad"));
 		
 		tblTabla.setItems(listaFiltrada);
-		ContextMenu contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(new MenuItem("Modificar"));
-		contextMenu.getItems().addAll(new MenuItem("Eliminar"));
-		tblTabla.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
-
-			@Override
-			public void handle(MouseEvent arg0) {
-				
-				contextMenu.show(tblTabla,arg0.getScreenX(),arg0.getScreenY());
-				
-			}
-		});
+		
+		cmTabla = new ContextMenu();
+		miModificar = new MenuItem("Modificar");
+		//miEliminar = new MenuItem("Eliminar");
+		
+		cmTabla.getItems().addAll(miModificar);
+		
 	}
 		
 	/*
@@ -160,7 +164,11 @@ public class ActividadBController implements Initializable{
     		}
     	}
     }
-		
+    @FXML
+    void menuContextual(MouseEvent event) {
+
+    }
+    
 	/*
 	 * Metodos auxiliares 
 	 */
