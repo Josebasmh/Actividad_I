@@ -21,9 +21,6 @@ public class Main extends Application {
 		//Image imgLogo = new Image();
 		FlowPane root;
 		try {
-			root = (FlowPane)FXMLLoader.load(getClass().getResource("/fxml/Persona.fxml"));
-		FlowPane root;
-		try {
 			String idioma = Propiedades.getValor("idioma");
 			String region = Propiedades.getValor("region");
 			ResourceBundle bundle= ResourceBundle.getBundle("idiomas/messages",new Locale(idioma,region));
