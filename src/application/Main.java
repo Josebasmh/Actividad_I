@@ -16,7 +16,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		
-		//Image imgLogo = new Image();
 		FlowPane root;
 		try {
 			String idioma = Propiedades.getValor("idioma");
