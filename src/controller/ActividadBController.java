@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 import dao.PersonaDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,7 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Modality;
@@ -42,7 +40,16 @@ public class ActividadBController implements Initializable{
     private Button btnModificar;
     
     @FXML
+    private ContextMenu cmTabla;
+    
+    @FXML
     private ImageView imgImagen;
+    
+    @FXML
+    private MenuItem miModificar;
+    
+    @FXML
+    private MenuItem miEliminar;
 	
 	@FXML
     private TableView<Persona> tblTabla;
@@ -77,21 +84,13 @@ public class ActividadBController implements Initializable{
 		tblEdad.setCellValueFactory(new PropertyValueFactory<Persona, Integer>("edad"));
 		
 		tblTabla.setItems(listaFiltrada);
-		ContextMenu contextMenu = new ContextMenu();
-		MenuItem miModificar=new MenuItem("Modificar");
 		
-		contextMenu.getItems().addAll(miModificar);
-		contextMenu.getItems().addAll(new MenuItem("Eliminar"));
-		tblTabla.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
-
-			@Override
-			public void handle(MouseEvent arg0) {
-				if (arg0.getButton().equals(MouseButton.PRIMARY)) {
-					contextMenu.show(tblTabla,arg0.getScreenX(),arg0.getScreenY());
-					
-				}
-			}
-		});
+		cmTabla = new ContextMenu();
+		miModificar = new MenuItem("Modificar");
+		
+		
+		cmTabla.getItems().addAll(miModificar);
+		
 	}
 		
 	/*
@@ -164,7 +163,11 @@ public class ActividadBController implements Initializable{
     		}
     	}
     }
-		
+    @FXML
+    void menuContextual(MouseEvent event) {
+
+    }
+    
 	/*
 	 * Metodos auxiliares 
 	 */
