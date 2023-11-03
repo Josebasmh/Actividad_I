@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
@@ -56,9 +57,18 @@
             </TableView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" stylesheets="@../css/application.css">
                <children>
-                  <Button id="boton" fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarPersona" text="%botonAgregar" />
-                  <Button id="boton" fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPersona" text="%botonModificar" />
-                  <Button id="boton" fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPersona" text="%botonEliminar" />
+                  <Button id="boton" fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarPersona" text="%botonAgregar">
+                     <tooltip>
+                        <Tooltip text="%ttaniadir" />
+                     </tooltip></Button>
+                  <Button id="boton" fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPersona" text="%botonModificar">
+                     <tooltip>
+                        <Tooltip text="%ttmodificar" />
+                     </tooltip></Button>
+                  <Button id="boton" fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPersona" text="%botonEliminar">
+                     <tooltip>
+                        <Tooltip text="tteliminar" />
+                     </tooltip></Button>
                </children>
             </HBox>
          </children>
